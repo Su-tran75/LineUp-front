@@ -1,0 +1,134 @@
+@use 'src/styles/vars';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+#root {
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  background-size: cover;
+  color: vars.$fontColor;
+}
+
+// PHONE
+@media only screen and (max-width : 480px) {
+  #root {
+    background-image: url('../../assets/background-4232859_1280.jpg');
+  }
+
+  .app-container {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 90% 10%;
+    grid-template-areas:
+      "main"
+      "nav-container"
+    ;
+
+    .main-content-container {
+      overflow-x: hidden;
+      overflow-y: auto;
+      padding-top: 1em;
+      padding-left: .5em;
+      padding-right: .5em;
+      &::-webkit-scrollbar{
+        display: none;
+      }
+    }
+  }
+}
+
+// TABLET
+@media only screen and (min-width : 480px) and (max-width : 768px) {
+  #root {
+    background-image: url('../../assets/background-4232859_1280.jpg');
+  }
+  .app-container {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 90% 10%;
+    grid-template-areas:
+      "main"
+      "nav-container"
+    ;
+
+    .main-content-container {
+      overflow-y: auto;
+      padding-top: 2em;
+      padding-left: .5em;
+      padding-right: .5em;
+      &::-webkit-scrollbar {
+        // Valeur non prise en compte, présente uniqument pour que ::-webkit-scrollbar-thumb soit détecté
+        height: 100%;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: vars.$scrollbarBackground;
+        border: vars.$scrollbarWidth vars.$scrollbarColor groove;
+        border-radius: 5em;
+      }
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+    }
+  }
+}
+
+// DESKTOP
+@media only screen and (min-width : 768px) {
+  #root {
+    background-image: url('../../assets/background-4232859_1280-desktop.jpg');
+  }
+  .app-container {
+    max-width: 1200px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 10% 90%;
+    grid-template-areas:
+      "nav-container"
+      "main"
+    ;
+
+    .main-content-container {
+      overflow-y: auto;
+      padding-top: 1em;
+      padding-left: .5em;
+      padding-right: .5em;
+      &::-webkit-scrollbar {
+        // Valeur non prise en compte, présente uniqument pour que ::-webkit-scrollbar-thumb soit détecté
+        height: 100%;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: vars.$scrollbarBackground;
+        border: vars.$scrollbarWidth vars.$scrollbarColor groove;
+        border-radius: 5em;
+      }
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+    }
+  }
+}
+
+// GRID AREAS NAMES
+.nav-container {
+  grid-area: nav-container;
+  
+  background: transparent;
+}
+
+.main-content-container {
+  grid-area: main;
+}

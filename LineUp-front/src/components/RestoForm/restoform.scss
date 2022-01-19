@@ -1,0 +1,187 @@
+@use 'src/styles/vars';
+
+.subscribe-resto-container {
+  border-radius: 5px;
+  height: 95%;
+  
+  padding: 1em;
+
+  input {
+    color: vars.$fontColor;
+    background: transparent;
+  }
+  label {
+    color: vars.$fontColor;
+  }
+
+
+  .link {
+    color: vars.$fontColor;
+    border-radius: 50%;
+    &:hover {
+     cursor: pointer;
+      color: vars.$secondColor;
+    }
+    &:active{
+      color: vars.$secondColor;
+      svg {
+        padding-top: 5px;
+      }
+    }
+  }
+  h1.add-resto-title {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 1em;
+    font-weight: 700;
+    text-shadow: #000 2px 2px 5px;
+  }
+
+  h2 {
+    font-size: 1.5em;
+    margin-left: 0.2em;
+    font-weight: 700;
+    text-shadow: #000 2px 2px 5px;
+  }
+
+  form.add-resto-form {
+    height: 100%;
+    width: 100%;
+
+    .top-fieldset {
+      & > * {
+        margin-top: 10px;
+      }
+      width: 100%;
+      display: grid;
+      justify-content: space-between;
+      grid-template-columns: 49% 49%;
+      grid-template-rows: auto;
+      grid-template-areas:
+        "topTitle topTitle"
+        "firstname lastname"
+        "email email"
+      ;
+    }
+
+    .bottom-fieldset {
+      & > * {
+        margin-top: 10px;
+      }
+      margin-top: 1em;
+      width: 100%;
+      display: grid;
+      justify-content: space-between;
+      grid-template-columns: 49% 49%;
+      grid-template-rows: auto;
+      grid-template-areas:
+        "bottomTitle bottomTitle"
+        "restaurantName phoneNumber"
+        "adress adress"
+        "postalCode city"
+        "siret tradeName"
+        "cuisineTypeId cuisineTypeId"
+        "submitButton submitButton"
+      ;
+
+
+      #cusine-type-label {
+        color: vars.$fontColor;
+      }
+
+      #demo-simple-select-required{
+        color: vars.$fontColor;
+       
+      }
+    }
+
+    .top-fieldset :nth-child(1) {
+      grid-area: topTitle;
+      
+    }
+
+    .top-fieldset :nth-child(2) {
+      grid-area: firstname;
+      border-radius: 5px;
+    }
+
+    .top-fieldset :nth-child(3) {
+      grid-area: lastname;
+    }
+
+    .top-fieldset :nth-child(4) {
+      grid-area: email;
+    }
+
+    // Bottom Form
+    .bottom-fieldset :nth-child(1) {
+      grid-area: bottomTitle;
+    }
+
+    .bottom-fieldset :nth-child(2) {
+      grid-area: restaurantName;
+     
+      border-radius: 5px;
+    }
+
+    .bottom-fieldset :nth-child(3) {
+      grid-area: phoneNumber;
+    }
+
+    .bottom-fieldset :nth-child(4) {
+      grid-area: adress;
+    }
+
+    .bottom-fieldset :nth-child(5) {
+      grid-area: postalCode;
+    }
+
+    .bottom-fieldset :nth-child(6) {
+      grid-area: city;
+    }
+
+    .bottom-fieldset :nth-child(7) {
+      grid-area: cuisineTypeId;
+    }
+
+    .bottom-fieldset :nth-child(8) {
+      grid-area: siret;
+    }
+
+    .bottom-fieldset :nth-child(9) {
+      grid-area: tradeName;
+    }
+
+    .bottom-fieldset :nth-child(10) {
+      grid-area: submitButton;
+      text-transform: uppercase;
+      width: 60%;
+      height: 50px;
+      place-self: center;
+      font-size: 1em;
+      letter-spacing: 0.2em;
+      font-weight: bold;
+      // border: $borderWidth solid $borderColor;
+      border-radius: 10px;
+      border: none;
+      background: vars.$bor-background;
+      color: vars.$fontColor;
+      transition: all 0.2s ease-in-out;
+
+      @media only screen and (max-width: 520px) {
+        height: 65px;
+      }
+
+      &:active{
+        outline: none;
+        background: vars.$fontColor;
+        color: vars.$bor-background;
+        box-shadow: vars.$bor-btnShadowActivate;
+      }
+      &:hover {
+        background-color: vars.$hoverButton;
+      }
+    }
+
+  }
+}

@@ -1,0 +1,170 @@
+@use 'src/styles/vars';
+
+$btnColor: #188CFB;
+$borderColor: #188CFB;
+$borderWidth: 2px;
+
+.add-resto-container {
+  border-radius: 5px;
+  
+  height: 100%;
+  width: 100%;
+  padding: 1em;
+  h1.add-resto-title {
+    font-size: 2em;
+    margin-bottom: 1em;
+    text-align: center;
+  }
+  h2 {
+    font-size: 1.5em;
+    margin-left: 0.2em;
+  }
+  form.add-resto-form {
+    height: 100%;
+    width: 100%;
+    input {
+      color: vars.$fontColor;
+    }
+    label {
+      color: vars.$fontColor;
+    }
+    .top-fieldset {
+      height: 40%;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 47% 6% 35% auto;
+      grid-template-rows: auto;
+      grid-template-areas: 
+        "topTitle topTitle topTitle topTitle"
+        "firstname . lastname lastname"
+        "email . password passwordButton"
+      ;
+    }
+    .bottom-fieldset {
+      margin-top: 1em;
+      height: 40%;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 47% 6% auto;
+      grid-template-rows: auto;
+      grid-template-areas:
+        "bottomTitle bottomTitle bottomTitle"
+        "restaurantName . phoneNumber"
+        "adress adress adress"
+        "postalCode . city"
+        "siret . tradeName"
+        "cuisineTypeId . picture"
+        "submitButton submitButton submitButton"
+      ;
+
+      .submit-button {
+        margin-top: 1.5em;
+      }
+    }
+
+    // TOP FIELDSET
+    .top-fieldset > * {
+      margin-top: 5px;
+    }
+    .top-fieldset :nth-child(1) {
+      grid-area: topTitle;
+    }
+    .top-fieldset :nth-child(2) {
+      grid-area: firstname;
+    }
+    .top-fieldset :nth-child(3) {
+      grid-area: lastname;
+    }
+    .top-fieldset :nth-child(4) {
+      grid-area: email;
+    }
+    .top-fieldset :nth-child(5) {
+      grid-area: role;
+      display: none; // TODO
+    }
+    .top-fieldset :nth-child(6) {
+      grid-area: password;
+    }
+    .top-fieldset :nth-child(7) {
+      grid-area: passwordButton;
+      align-self: flex-end;
+      height: 70%;
+      border: none;
+      background: transparent;
+      transform: rotate(15deg);
+      transition: 1s;
+      color: vars.$fontColor;
+      &:active {
+        transform: rotate(910deg);
+        transition: 1s;
+      }
+      svg {
+        color: black;
+        font-size: 2.8em;
+      }
+    }
+    
+    // Bottom Form
+    .bottom-fieldset > * {
+      margin-top: 5px;
+    }
+    .bottom-fieldset :nth-child(1) {
+      grid-area: bottomTitle;
+    }
+    .bottom-fieldset :nth-child(2) {
+      grid-area: restaurantName;
+    }
+    .bottom-fieldset :nth-child(3) {
+      grid-area: phoneNumber;
+    }
+    .bottom-fieldset :nth-child(4) {
+      grid-area: adress;
+    }
+    .bottom-fieldset :nth-child(5) {
+      grid-area: postalCode;
+    }
+    .bottom-fieldset :nth-child(6) {
+      grid-area: city;
+    }
+    .bottom-fieldset :nth-child(7) {
+      grid-area: cuisineTypeId;
+      .MuiSelect-root.MuiSelect-select.MuiSelect-selectMenu.MuiInputBase-input.MuiInput-input {
+        color: vars.$fontColor;
+      }
+    }
+    .bottom-fieldset :nth-child(8) {
+      grid-area: siret;
+    }
+    .bottom-fieldset :nth-child(9) {
+      grid-area: tradeName;
+    }
+    .bottom-fieldset :nth-child(10) {
+      grid-area: picture;
+      background-color: vars.$bor-background;
+      padding-top: 13px;
+      padding-left: 10px;
+      font-size: 1.1em;
+    }
+    .bottom-fieldset :nth-child(11) {
+      grid-area: submitButton;
+      width: 60%;
+      height: 40px;
+      place-self: center;
+      font-size: 1em;
+      letter-spacing: 0.3em;
+      font-weight: bold;
+      // border: $borderWidth solid $borderColor;
+      border-radius: 10px;
+      background: vars.$bor-background;
+      color: vars.$fontColor;
+      &:active{
+        outline: none;
+        background: vars.$fontColor;
+        color: vars.$bor-background;
+        box-shadow: vars.$bor-btnShadowActivate;
+      }
+    }
+    
+  }
+}
+

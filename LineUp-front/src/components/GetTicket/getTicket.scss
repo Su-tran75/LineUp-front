@@ -1,0 +1,127 @@
+@use 'src/styles/vars';
+
+$backgroundButtonsTop: linear-gradient(0deg, rgba(87,87,87,1) 0%, rgba(31,31,31,1) 50%);
+$backgroundButtonsBottom: linear-gradient(0deg, rgba(31,31,31,1) 50%, rgba(87,87,87,1) 100%);
+
+.get-ticket-component {
+  background-color: vars.$bor-background;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0.7em;
+  // box-shadow: vars.$bor-shadow;
+  border-radius: 10px;
+
+  .get-ticket__title {
+    text-align: center;
+    font-size: 2em;
+    color: vars.$fontColor;
+    margin-top: 10px;
+  }
+
+  .get-ticket__form {
+    text-align: center;
+    padding: 0.5em 1em;
+    height: 100%;
+    .get-ticket__name {
+      width: 100%;
+      margin-bottom: 9px;
+      input {
+        color: vars.$fontColor;
+      }
+      label {
+        width: 100%;
+        color: vars.$fontColor;
+      }
+    }
+    .get-ticket__btn_div {
+      margin-top: 20px;
+      box-shadow: inset -41px 41px 82px #1f1f1f,
+      inset 41px -41px 82px #575757;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 30% 40% 30%;
+      grid-template-rows: 60% 40%;
+      grid-template-areas: 
+        "bottomBtn input topBtn"
+        "add add add"
+      ;
+      height: 3em;
+      border-radius: 10px;
+      height:  70px;
+      .get-ticket__btn {
+        background: transparent;
+        color: vars.$fontColor;
+        border: none;
+        &:active{
+          outline: none;
+          background: vars.$bor-btnColor;
+          color: vars.$bor-background;
+          box-shadow: vars.$bor-btnShadowActivate;
+        }
+        svg {
+          font-size: 2.5em;
+        }
+      }
+      label {
+        grid-area: input;
+        width: 40;
+        input {
+          
+          color: vars.$fontColor;
+          background: $backgroundButtonsTop;
+          text-align: center;
+          font-size: 2em;
+          width: 100%;
+          border: none;
+        }
+        // Remove arrows
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }
+        /* Firefox */
+        input[type=number] {
+        -moz-appearance: textfield;
+        }
+      }
+      .get-ticket__btn.bottom {
+        grid-area: bottomBtn;
+        border-right: vars.$bor-borderWidth solid vars.$bor-borderColor;
+        background: $backgroundButtonsTop;
+          &:active{
+            outline: none;
+            background: vars.$bor-btnColor;
+            color: vars.$bor-background;
+            box-shadow: vars.$bor-btnShadowActivate;
+          }
+      }
+      .get-ticket__btn.top {
+        grid-area: topBtn;
+        border-left: vars.$bor-borderWidth solid vars.$bor-borderColor;
+        background: $backgroundButtonsTop;
+      }
+      .get-ticket__btn.add {
+        grid-area: add;
+        background: $backgroundButtonsBottom;
+        border-top: vars.$bor-borderWidth solid vars.$bor-borderColor;
+        font-weight: bold;
+        letter-spacing: 0.1em;
+        width: 100%;
+      }
+    }
+    .get-ticket__comment {
+      margin-top: 15px;
+      width: 100%;
+      input {
+        color: vars.$fontColor;
+      }
+      label {
+        width: 100%;
+        color: vars.$fontColor;
+      }
+    }
+  } 
+}

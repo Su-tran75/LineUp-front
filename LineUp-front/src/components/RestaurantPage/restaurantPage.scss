@@ -1,0 +1,226 @@
+@use 'src/styles/vars';
+
+.restaurant-page {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  .restaurant-infos {
+    display: inline-block;
+    position: relative;
+    color: wheat;
+    font-weight: bold;
+    text-shadow: black 0.1em 0.1em 0.2em;
+    padding-bottom: 10px;
+
+
+    @media only screen and (max-width : 440px) {
+      .restaurant-picture{ 
+        margin-top: 5%;
+        border-radius: 15px;
+        width: 100%;
+        
+      }
+      .restaurant-type-food {
+        font-size: 1.3em;
+        z-index: 1;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 3vh;
+        span {
+          text-shadow: black 1px 1px 1px, black -1px 1px 1px, black -1px -1px 1px, black 1px -1px 1px;
+  
+          // ou bien comme sur la card-restaurant de la home
+          // background-color: rgba(0, 0, 0, 0.658);
+          // text-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
+          // box-shadow: 0px 0px 7px 2px rgb(0, 0, 0);
+          // border-radius: 10px;
+          // padding: 0 7px;
+        }
+      }  
+    }
+
+    @media only screen and (min-width : 440px) and (max-width : 600px) {
+      .restaurant-picture{
+        border-radius: 15px;
+        width: 100%;
+      }
+      .restaurant-type-food {
+        font-size: 1.2em;
+        z-index: 1;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 3vh;
+          span {
+            text-shadow: black 1px 1px 1px, black -1px 1px 1px, black -1px -1px 1px, black 1px -1px 1px;
+    
+            // ou bien comme sur la card-restaurant de la home
+            // background-color: rgba(0, 0, 0, 0.658);
+            // text-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
+            // box-shadow: 0px 0px 7px 2px rgb(0, 0, 0);
+            // border-radius: 10px;
+            // padding: 0 7px;
+        }
+      }  
+    }
+
+    @media only screen and (min-width : 600px) and (max-width : 768px) {
+      .restaurant-picture{
+        border-radius: 15px;
+        width: 100%;
+      }
+      .restaurant-type-food {
+        font-size: 1.2em;
+        z-index: 1;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 3vh;
+          span {
+            text-shadow: black 1px 1px 1px, black -1px 1px 1px, black -1px -1px 1px, black 1px -1px 1px;
+        }
+      }  
+    }
+
+    @media only screen and (min-width : 768px) and (max-width : 1024px) {
+      .restaurant-picture{
+        border-radius: 15px;
+        width: 75%;
+        object-fit: fill;
+      }
+      .restaurant-type-food {
+        font-size: 1.2em;
+        z-index: 1;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 3vh;
+          span {
+            text-shadow: black 1px 1px 1px, black -1px 1px 1px, black -1px -1px 1px, black 1px -1px 1px;
+        }
+      }  
+    }
+
+    @media only screen and (min-width : 1024px) and (max-width : 2048px) {
+      .restaurant-picture{
+        border-radius: 15px;
+        width: 60%;
+      }
+      .restaurant-type-food {
+        font-size: 1.2em;
+        z-index: 1;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 3vh;
+          span {
+            text-shadow: black 1px 1px 1px, black -1px 1px 1px, black -1px -1px 1px, black 1px -1px 1px;
+        }
+      }  
+    }
+  }
+  
+  .restaurant-statut {
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:  10px 20px;
+    justify-content: space-evenly;
+    color: black;
+    font-weight: bold;
+
+    // color: white;
+    // text-shadow: black 1px 1px 1px, black -1px 1px 1px, black -1px -1px 1px, black 1px -1px 1px;
+    .restaurant-name {
+      font-size: 1.5em;
+    }
+    .restaurant-adress {
+      font-size: 1.2em;
+    }
+    .restaurant-phone {
+      font-size: 1.2em;
+    }
+    .restaurant-queue {
+      font-size: 1.2em;
+    }
+
+  }
+
+  @media only screen and (min-width : 320px) and (max-width : 440px) {
+    .restaurant-statut {
+      margin: 20px;
+
+      .restaurant-name {
+        font-size: 1.2em;
+      }
+      .restaurant-adress {
+        font-size: 1em;
+      }
+      .restaurant-phone {
+        font-size: 1em;
+      }
+      .restaurant-queue {
+        font-size: 1em;
+      }
+    }
+  }
+
+  @media only screen and (min-width : 440px) and (max-width : 600px) {
+    .restaurant-statut {
+      margin:  0 20px;
+
+      .restaurant-name {
+        font-size: 1.2em;
+      }
+      .restaurant-adress {
+        font-size: 1em;
+      }
+      .restaurant-phone {
+        font-size: 1em;
+      }
+      .restaurant-queue {
+        font-size: 1em;
+      }
+    }
+  }
+
+  @media only screen and (min-width : 600px) and (max-width : 1024px) {
+    .restaurant-statut {
+      margin:  0 20px;
+
+      .restaurant-name {
+        font-size: 1.2em;
+      }
+      .restaurant-adress {
+        font-size: 1em;
+      }
+      .restaurant-phone {
+        font-size: 1em;
+      }
+      .restaurant-queue {
+        font-size: 1em;
+      }
+    }
+  }
+
+  .modal-ticket {
+    padding: 10px 0 10px 0;
+
+    button {
+      border-radius: 5px;
+      font-size: medium;
+      font-weight: 700;
+      color: wheat;
+      padding: 5px 10px;
+      background-color: vars.$backgroundColor;
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,131 @@
+@use 'src/styles/vars';
+
+$backgroundColor: #188CFB;
+
+.ticket-mini-component {
+  background-color: wheat;
+  
+  // box-shadow: inset -41px 41px 82px #000000,
+  //             inset 41px -41px 82px #140000;
+  border-radius: 1em;
+  margin-top: .8em;
+  border: vars.$bor-borderWidth solid vars.$bor-borderColor;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .ticket-mini-phone {
+    font-size: 1.2em;
+    text-align: center;
+    color: #188CFB;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  .ticket-mini-top-container {
+    box-shadow: inset -41px 41px 82px #1f1f1f,
+                inset 41px -41px 82px #202020;
+    color: vars.$fontColor;
+    height: 25%;
+    border-bottom: vars.$bor-borderWidth solid vars.$bor-borderColor;
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 100%;
+    grid-template-areas: 
+      "hour name guests"
+    ;
+    .ticket-mini-name {
+      overflow-y: hidden;
+      grid-area: name;
+      place-self: center;
+      font-size: 1.2em;
+      padding-top: 3px;
+    }
+
+
+
+    .ticket-mini-hour {
+      grid-area: hour;
+      font-size: 1.2em;
+      text-align: center;
+      display: grid;
+      place-content: center;
+      padding: 3px 0;
+    }
+
+
+    .ticket-mini-guests {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      grid-area: guests;
+      font-size: 1.2em;
+      svg {
+        margin-left: 3px;
+        font-size: .9em;
+        // padding-top: 1px;
+      }
+    }
+
+  }
+  .ticket-mini-comment {
+    text-align: center;
+    display: grid;
+    place-content: center;
+    height: 3em;
+    margin-bottom: 3px;
+    font-style: italic;
+    color: darken(vars.$fontColor, 100%);
+    font-weight: bold;
+  }
+  .ticket-mini-btn-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100%;
+    grid-template-areas: 
+      "delete valid"
+    ;
+    border-top: vars.$bor-borderWidth solid vars.$bor-borderColor;
+    & > * {
+      // background-color: vars.$bor-background;
+      border: none;
+      box-shadow: inset -41px 41px 82px #1f1f1f,
+                  inset 41px -41px 82px #202020;
+    }
+    .ticket-mini-btn-delete {
+      grid-area: delete;
+      color: vars.$fontColor;
+      &:active{
+        outline: none;
+        background: vars.$bor-btnColor;
+        color: vars.$bor-background;
+        box-shadow: vars.$bor-btnShadowActivate;
+      }
+    }
+
+    // .ticket-mini-btn-edit {
+    //   grid-area: edit;
+    //   border-left: vars.$bor-borderWidth solid vars.$bor-borderColor;
+    //   border-right: vars.$bor-borderWidth solid vars.$bor-borderColor;
+    //   color: $editColor;
+    //   &:active{
+    //     outline: none;
+    //     background: $editColor;
+    //     color: white;
+    //     box-shadow: inset 5px 5px 10px darken($editColor, 15%),
+    //     inset -5px -5px 10px $editColor;
+    //   }
+    // }
+    
+    .ticket-mini-btn-valid {
+      grid-area: valid;
+      color: vars.$fontColor;
+      border-left: vars.$bor-borderWidth solid vars.$bor-borderColor;
+      &:active{
+        background: vars.$bor-btnColor;
+        color: vars.$bor-background;
+        box-shadow: vars.$bor-btnShadowActivate;
+      }
+    }
+
+  }
+}

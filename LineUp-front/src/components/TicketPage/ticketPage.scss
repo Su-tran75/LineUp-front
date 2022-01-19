@@ -1,0 +1,232 @@
+@use 'src/styles/vars';
+
+.ticket-page-container {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  h1.ticket-page-title {
+    font-size: 2.8em;
+    font-weight: bold;
+    color: vars.$fontColor;
+    text-shadow: vars.$titleShadow;
+    padding-bottom: 150px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    
+  }
+  *, *:before, *:after {
+    box-sizing: border-box;
+  }
+
+  .noTicket{
+    padding: 20px;
+    position: relative;
+    color: black;
+    text-decoration: none;
+    line-height: 24px;
+    transition: 0.2s;
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      transition: transform .5s ease;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-style: solid;
+      border-color: vars.$linkBorderColor;
+    }
+    &:before {
+      border-width: 2px 0 2px 0;
+      transform:  scaleX(0);
+    }
+    &:after {
+      border-width: 0 2px 0 2px;
+      transform:  scaleY(0);
+    }
+    &:hover:before, &:hover:after {
+      transform:  scale(1, 1);
+      color: white;
+    }
+  }
+
+
+  .info-ticket-container {
+    margin-top: -80px;
+    background-color: vars.$backgroundColor;
+    height: 70%;
+    width: 75%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 25% 60% 15%;
+    grid-template-areas: 
+      "topContainer"
+      "mainContainer"
+      "bottomContainer"
+    ;
+    position: relative;
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      left: 5px;
+      height: 6px;
+      width: 98%;
+    }
+    &:before {
+      top: -5px;
+      background: radial-gradient(circle, transparent, transparent 50%, vars.$backgroundColor 50%, vars.$backgroundColor 100% ) -7px -8px / 16px 16px repeat-x,
+    }
+    
+    &:after {
+      bottom: -5px;
+      background: radial-gradient(circle, transparent, transparent 50%, vars.$backgroundColor 50%, vars.$backgroundColor 100% ) -7px -2px / 16px 16px repeat-x,
+    }
+    .ticket-top-container{
+      padding: 2em;
+      grid-area: topContainer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img.ticket-picture {
+        // width & height have to be equal to make a perfect square
+        width: 80px;
+        height: 80px;
+        // then we can apply border-radius to make our circle
+        border-radius: 100%;
+        margin-right: 10px;
+      }
+      h2.ticket-title {
+        font-size: 2em;
+        padding: 10px;
+        color:vars.$secondColor;
+        border-radius: 10px;
+        font-weight: bold;
+        font-style: italic;
+      }
+    }
+    .ticket-main-container {
+      grid-area: mainContainer;
+      display: grid;
+      grid-template-columns: 50% 50%;
+      grid-template-rows: 25% 25% auto;
+      grid-template-areas: 
+        "position guests"  
+        "estimatedTime estimatedTime"
+        "paragraph paragraph"
+      ;
+      border-radius: 10px;
+      text-align: center;
+      .ticket-position {
+        grid-area: position;
+        border-radius: 10px;
+        margin: 10px;
+        background-color: vars.$fontColor;
+        color: vars.$backgroundColor;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+      }
+      .ticket-guests {
+        grid-area: guests;
+        margin: 10px;
+        border-radius: 10px;
+        background-color: vars.$fontColor;
+        color: vars.$backgroundColor;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+      }
+      .ticket-estimated-time {
+        grid-area: estimatedTime;
+        margin: 10px;
+        border-radius: 10px;
+        background-color: vars.$fontColor;
+        color: vars.$backgroundColor;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+      }
+      .ticket-paragraph {
+        grid-area: paragraph;
+        padding: 10px;
+        border-radius: 1.5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        line-height: 20px;
+        .paragraph-top {
+          color: vars.$fontColor;
+          font-size: 1.1em;
+          margin-bottom: 15px;
+        }
+        .paragraph-bottom {
+          font-size: 0.7em;
+          color: darken(vars.$fontColor, 25%);
+        }
+      }
+    }
+    .ticket-bottom-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      .delete-btn {
+        height: 40px;
+        font-size: 1.1em;
+        padding-left: 5px;
+        padding-right: 5px;
+        border-radius: 10px;
+        color: vars.$fontColor;
+        border: none;
+        background: rgb(156, 0, 0);
+        margin-right: 10px;
+        font-weight: bold;
+        
+        &:active{
+          color: rgb(156, 0, 0);
+          box-shadow: inset -30px -30px 20px rgb(201, 182, 148),
+                      inset 30px 30px 20px wheat;
+        }
+        &:hover{
+          color: vars.$fontColor;
+          box-shadow: inset -30px -30px 20px #770000,
+          inset 30px 30px 20px #cf0000;
+        }
+      }
+      .restaurant-link {
+        
+          .restaurant-btn {
+            border: none;
+            height: 40px;
+            font-size: 1.1em;
+            margin-left: 10px;
+            border-radius: 10px;
+            font-weight: bold;
+            background: darken(vars.$fontColor, 15%);
+            &:hover{
+              box-shadow: inset -30px -30px 20px darken(vars.$fontColor, 25%),
+                          inset 30px 30px 20px darken(vars.$fontColor, 15%);
+            }
+          }
+      }
+    }
+  }
+  @media only screen and (min-width : 768px) {
+    .info-ticket-container {
+      width: 50%;
+    }
+  }
+  .noTicket {
+    font-size: 1.2em;
+    font-weight: 700;
+    text-align: center;
+  }
+}

@@ -1,0 +1,162 @@
+@use 'src/styles/vars';
+
+
+$backgroundColor: rgb(255, 255, 255);
+$borderWidth: 2px;
+$boxShadow: inset -30px -30px 20px #770000,
+            inset 30px 30px 20px #cf0000;
+
+.back-admin-results-container {
+  .MuiPaper-root.MuiAccordion-root.MuiAccordion-rounded.MuiPaper-elevation1.MuiPaper-rounded {
+    background-color: vars.$backgroundColor;
+    color: vars.$fontColor;
+    border-radius: 5px;
+  }
+  .MuiAccordionSummary-content {
+    display: flex;
+    justify-content: space-between;
+  }
+  .MuiAccordionDetails-root {
+    display: block;
+  }
+  .boa-restaurant-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    .restaurant-card {
+      height: 100px;
+      margin-bottom: .5em;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 5% 20% 20% 20% 25% 10%;
+      grid-template-rows: 50% 50%;
+      grid-template-areas:
+        " . name adress phone picture btn"
+        " . type zip siret picture btn"
+      ;
+      width: 100%;
+      border: vars.$bor-borderWidth solid vars.$fontColor;
+      border-radius: 5em;
+      .restaurant-picture {
+        grid-area: picture;
+        width: 60%;
+        margin-left: 30px;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      .restaurant-name {
+        grid-area: name;
+        place-self: center;
+        font-weight: bold;
+        text-align: center;
+      }
+      .restaurant-adress {
+        grid-area: adress;
+        place-self: center;
+        text-align: center;
+      }
+      .restaurant-zip {
+        grid-area: zip;
+        place-self: center;
+        text-align: center;
+      }
+      .restaurant-type {
+        grid-area: type;
+        place-self: center;
+        text-align: center;
+      }
+      .restaurant-phone {
+        grid-area: phone;
+        place-self: center;
+        font-weight: bold;
+        color: #188CFB;
+        text-align: center;
+      }
+      .restaurant-siret {
+        grid-area: siret;
+        text-align: center;
+        text-align: center;
+      }
+
+      .restaurant-btn {
+        grid-area: btn;
+        color: red;
+        border: none;
+        border-left: vars.$bor-borderWidth solid vars.$fontColor;
+        background: transparent;
+        padding-left: 0px;
+        svg {
+          font-size: 3em;
+        }
+        &:active{
+          outline: none;
+          color: vars.$fontColor;
+          box-shadow: $boxShadow;
+        }
+      }
+    }
+  }
+  .boa-user-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    .user-card {
+      height: 40px;
+      margin-bottom: .5em;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 5% 5% 20% 30% 30% 10%;
+      grid-template-rows: 100%;
+      grid-template-areas:
+        " . avatar name mail phone btn"
+      ;
+      width: 100%;
+      border: vars.$bor-borderWidth solid vars.$fontColor;
+      border-radius: 5em;
+      .user-avatar {
+        grid-area: avatar;
+        place-self: center;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+      }
+      .user-name {
+        grid-area: name;
+        place-self: center;
+        span {
+          font-weight: bold;
+        }
+      }
+      .user-phone {
+        grid-area: phone;
+        place-self: center;
+        font-weight: bold;
+        color: #188CFB;
+      }
+
+      .user-mail {
+        grid-area: mail;
+        place-self: center;
+        font-style: italic;
+        font-weight: bold;
+      }
+
+      .user-btn {
+        grid-area: btn;
+        color: red;
+        border: none;
+        border-left: vars.$bor-borderWidth solid vars.$fontColor;
+        background: transparent;
+        padding-left: 0px;
+        &:active{
+          outline: none;
+          color: vars.$fontColor;
+          box-shadow: $boxShadow;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,569 @@
+@use 'src/styles/vars';
+
+
+
+  
+.profile-page-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+
+  .logout-container{
+    height: 50px;
+    padding-top: 5%;
+    *,
+    *:before,
+    *:after {
+      box-sizing: border-box;
+    }
+  }
+
+  .profile-display {
+    position: relative;
+    
+    .profile-infos-div {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      margin: 85px 10px 20px 10px;
+      padding: 20px;
+      background: vars.$bor-background;
+      border-radius: 10px;
+    }
+    
+    .profile-title {
+      font-size: 1.5em;
+      font-weight: bold;
+      text-decoration: underline;
+      margin-bottom: 15px;
+    }
+    
+    .profile-infos {
+      font-size: 1em;
+      margin: 5px 0 5px 0;
+    }
+  }
+
+  .logout-container p {
+    font-weight: 700;
+    text-shadow: #000 2px 2px 5px;
+  }
+  .action-important {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items: center;
+
+    .profile-modal-password {
+      padding: 10px 0 10px 0;
+
+      button {
+        border-radius: 5px;
+        font-size: medium;
+        font-weight: 700;
+        color: wheat;
+        padding: 5px 10px;
+        background-color: vars.$backgroundColor;
+
+        &:hover {
+          background-color: transparent;
+        }
+      }
+    }
+
+    .profile-modal-delete {
+      padding: 10px 0 10px 0;
+
+      button {
+        border-radius: 5px;
+        font-size: medium;
+        padding: 5px 10px;
+        color: wheat;
+        font-weight: 700;
+        background-color: vars.$backgroundColor;
+        &:hover {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+  
+  
+  .restau-display{
+    flex: 0.3;
+    display: flex;
+    flex-direction: column;
+    background: vars.$bor-background;
+    border-radius: 10px;
+    margin: 0 10px;
+    padding: 20px;
+    
+    .restau-title {
+      font-size: 1.5em;
+      font-weight: bold;
+      text-decoration: underline;
+      margin-bottom: 15px;
+    }
+    .restau-restoName {
+      font-size: 1em;
+      margin: 5px 0
+    }
+    .restau-restoAdress {
+      font-size: 1em;
+      margin: 5px 0
+    }
+    .restau-restoZip {
+      font-size: 1em;
+      margin: 5px 0
+    }
+    .restau-restoCity {
+      font-size: 1em;
+      margin: 5px 0
+    }
+    .restau-restoPhoneNumber {
+      font-size: 1em;
+      margin: 5px 0
+    }
+    .restau-restoTradeName {
+      font-size: 1em;
+      margin: 5px 0
+    }
+    .restau-restoSiret {
+      font-size: 1em;
+      margin: 5px 0
+    }
+  }
+  
+  @media only screen and (max-width : 480px) {
+    
+    // .profile-display {
+    //   position: relative;
+      
+    //   .logout-container {
+    //     position: absolute;
+    //     right:5%;
+    //   }
+      
+    //   .profile-infos-div {
+    //     display: flex;
+    //     flex-direction: column;
+    //     text-align: center;
+    //     margin: 85px 10px 20px 10px;
+    //     padding: 20px;
+    //     background: vars.$bor-background;
+    //     border-radius: 10px;
+    //   }
+      
+    //   .profile-title {
+    //     font-size: 1.5em;
+    //     font-weight: bold;
+    //     text-decoration: underline;
+    //   }
+      
+    //   .profile-infos {
+    //     font-size: 1em;
+    //     margin: 5px 0 5px 0;
+    //   }
+    // }
+  
+    // .profile-modal-password {
+    //   padding: 10px 0 10px 0;
+    //   button {
+    //     border-radius: 10px;
+    //     font-size: 1em;
+    //     font-weight: 700;
+    //     color: wheat;
+    //     background: #1f1d19;
+    //     padding: 5px 10px;
+    //   }
+    // }
+    
+    // .profile-modal-delete {
+    //   padding: 10px 0 30px 0;
+    //   button {
+    //     border-radius: 10px;
+    //     font-size: 1em;
+    //     background: orangered;
+    //     padding: 5px 10px;
+    //     color: wheat;
+    //     font-weight: 700;
+    //   }
+    // }
+    
+    // .restau-display{
+    //   flex: 0.5;
+    //   display: flex;
+    //   flex-direction: column;
+    //   background: vars.$bor-background;
+    //   border-radius: 10px;
+    //   margin: 0 10px;
+    //   padding: 20px;
+      
+    //   .restau-title {
+        
+    //   }
+    //   .restau-restoName {
+    //     font-size: 1em;
+    //     margin: 5px 0
+    //   }
+    //   .restau-restoAdress {
+    //     font-size: 1em;
+    //     margin: 5px 0
+    //   }
+    //   .restau-restoZip {
+    //     font-size: 1em;
+    //     margin: 5px 0
+    //   }
+    //   .restau-restoCity {
+    //     font-size: 1em;
+    //     margin: 5px 0
+    //   }
+    //   .restau-restoPhoneNumber {
+    //     font-size: 1em;
+    //     margin: 5px 0
+    //   }
+    //   .restau-restoTradeName {
+    //     font-size: 1em;
+    //     margin: 5px 0
+    //   }
+    //   .restau-restoSiret {
+    //     font-size: 1em;
+    //     margin: 5px 0
+    //   }
+    // }
+  }
+
+  @media only screen and (min-width : 480px) and (max-width : 768px) {
+    
+    // .profile-display {
+    //   position: relative;
+      
+    //   .logout-container {
+    //     position: absolute;
+    //     right:5%;
+    //   }
+      
+    //   .profile-infos-div {
+    //     display: flex;
+    //     flex-direction: column;
+    //     text-align: center;
+    //     margin: 80px 80px 20px 80px;
+    //     padding-bottom: 10px;
+    //     background: vars.$bor-background;
+    //     border-radius: 10px;
+    //   }
+      
+    //   .profile-title {
+    //     font-size: 1.5em;
+    //     font-weight: bold;
+    //     margin: 20px 0 5px 0;
+    //     text-decoration: underline;
+    //   }
+      
+    //   .profile-infos {
+    //     font-size: 1em;
+    //     margin: 5px 0 5px 0;
+    //   }
+    // }
+  
+    // .profile-modal-password {
+    //   padding: 10px 0 10px 0;
+    //   button {
+    //     border-radius: 10px;
+    //     font-size: 1em;
+    //     font-weight: 700;
+    //     color: wheat;
+    //     background: #1f1d19;
+    //     padding: 5px 10px;
+    //   }
+    // }
+    
+    // .profile-modal-delete {
+    //   padding: 10px 0 30px 0;
+    //   button {
+    //     border-radius: 10px;
+    //     font-size: 1em;
+    //     background: orangered;
+    //     padding: 5px 10px;
+    //     color: wheat;
+    //     font-weight: 700;
+    //   }
+    // }
+    
+    // .restau-display{
+    //   flex: 0.5;
+    //   display: flex;
+    //   flex-direction: column;
+    //   background: vars.$bor-background;
+    //   border-radius: 10px;
+    //   margin: 0 80px;
+    //   padding: 20px;
+      
+    //   .restau-title {
+        
+    //   }
+    //   .restau-restoName {
+    //     font-size: 1em;
+    //     margin: 5px 0
+    //   }
+    //   .restau-restoAdress {
+    //     font-size: 1em;
+    //     margin: 5px 0
+    //   }
+    //   .restau-restoZip {
+    //     font-size: 1em;
+    //     margin: 5px 0
+    //   }
+    //   .restau-restoCity {
+    //     font-size: 1em;
+    //     margin: 5px 0
+    //   }
+    //   .restau-restoPhoneNumber {
+    //     font-size: 1em;
+    //     margin: 5px 0
+    //   }
+    //   .restau-restoTradeName {
+    //     font-size: 1em;
+    //     margin: 5px 0
+    //   }
+    //   .restau-restoSiret {
+    //     font-size: 1em;
+    //     margin: 5px 0
+    //   }
+    // }
+  }
+
+  @media only screen and (min-width : 768px) and (max-width : 1024px) {
+    
+    // .profile-display {
+    //   position: relative;
+      
+    //   .logout-container {
+    //     position: absolute;
+    //     right:5%;
+    //   }
+      
+    //   .profile-infos-div {
+    //     display: flex;
+    //     flex-direction: column;
+    //     text-align: center;
+    //     margin: 80px 200px 0;
+    //     padding: 0 20px 20px;
+    //     background: vars.$bor-background;
+    //     border-radius: 10px;
+    //   }
+      
+    //   .profile-title {
+    //     font-size: 1.5em;
+    //     font-weight: bold;
+    //     margin: 20px 0 5px 0;
+    //     text-decoration: underline;
+    //   }
+      
+    //   .profile-infos {
+    //     font-size: 1em;
+    //     margin: 5px 0 5px 0;
+    //   }
+    // }
+  
+    // .profile-modal-password {
+    //   padding: 30px 0 10px 0;
+    //   button {
+    //     border-radius: 10px;
+    //     font-size: 1em;
+    //     color: wheat;
+    //     background: #1f1d19;
+    //     padding: 5px 10px;
+    //   }
+    // }
+    
+    // .profile-modal-delete {
+    //   padding: 10px 0 30px 0;
+    //   button {
+    //     border-radius: 10px;
+    //     font-size: 1em;
+    //     background: orangered;
+    //     padding: 5px 10px;
+    //     color: wheat;
+    //     font-weight: 700;
+    //   }
+    // }
+    
+    // .restau-display{
+    //   flex: 0.5;
+    //   display: flex;
+    //   flex-direction: column;
+    //   background: vars.$bor-background;
+    //   border-radius: 10px;
+    //   margin: 0 200px;
+    //   padding: 10px;
+      
+    //   .restau-title {
+        
+    //   }
+    //   .restau-restoName {
+    //     font-size: 1em;
+    //     margin: 5px 0
+    //   }
+    //   .restau-restoAdress {
+    //     font-size: 1em;
+    //     margin: 5px 0
+    //   }
+    //   .restau-restoZip {
+    //     font-size: 1em;
+    //     margin: 5px 0
+    //   }
+    //   .restau-restoCity {
+    //     font-size: 1em;
+    //     margin: 5px 0
+    //   }
+    //   .restau-restoPhoneNumber {
+    //     font-size: 1em;
+    //     margin: 5px 0
+    //   }
+    //   .restau-restoTradeName {
+    //     font-size: 1em;
+    //     margin: 5px 0
+    //   }
+    //   .restau-restoSiret {
+    //     font-size: 1em;
+    //     margin: 5px 0
+    //   }
+    // }
+  }
+
+  @media only screen and (min-width : 1024px)  {
+    
+    // .profile-display {
+    //   position: relative;
+      
+    //   .logout-container {
+    //     font-size: 2em;
+    //     position: absolute;
+    //     right:5%;
+    //   }
+      
+    //   .profile-infos-div {
+    //     display: flex;
+    //     flex-direction: column;
+    //     text-align: center;
+    //     margin: 60px 350px 0;
+    //     padding: 10px 0;
+    //     background: vars.$bor-background;
+    //     border-radius: 10px;
+    //   }
+      
+    //   .profile-title {
+    //     font-size: 1.3em;
+    //     font-weight: bold;
+    //     margin: 10px 0 10px 0;
+    //     text-decoration: underline;
+    //   }
+      
+    //   .profile-infos {
+    //     font-size: 1em;
+    //     margin: 10px 0 10px 0;
+    //   }
+    // }
+  
+    // .profile-modal-password {
+    //   padding: 30px 0 10px 0;
+    //   button {
+    //     border-radius: 10px;
+    //     font-size: 1em;
+    //     color: wheat;
+    //     background: #1f1d19;
+    //     padding: 5px 10px;
+    //   }
+    // }
+    
+    // .profile-modal-delete {
+    //   padding: 10px 0 30px 0;
+    //   button {
+    //     border-radius: 10px;
+    //     font-size: 1em;
+    //     background: orangered;
+    //     padding: 5px 10px;
+    //     color: wheat;
+    //     font-weight: 700;
+    //   }
+    // }
+    
+    // .restau-display{
+    //   flex: 0.5;
+    //   display: flex;
+    //   flex-direction: column;
+    //   background: vars.$bor-background;
+    //   border-radius: 10px;
+    //   margin: 0 350px;
+    //   padding: 10px 0;
+      
+    //   .restau-title {
+        
+    //   }
+    //   .restau-restoName {
+    //     font-size: 1em;
+    //     margin: 10px 0
+    //   }
+    //   .restau-restoAdress {
+    //     font-size: 1em;
+    //     margin: 10px 0
+    //   }
+    //   .restau-restoZip {
+    //     font-size: 1em;
+    //     margin: 10px 0
+    //   }
+    //   .restau-restoCity {
+    //     font-size: 1em;
+    //     margin: 10px 0
+    //   }
+    //   .restau-restoPhoneNumber {
+    //     font-size: 1em;
+    //     margin: 10px 0
+    //   }
+    //   .restau-restoTradeName {
+    //     font-size: 1em;
+    //     margin: 10px 0
+    //   }
+    //   .restau-restoSiret {
+    //     font-size: 1em;
+    //     margin: 10px 0
+    //   }
+    // }
+  }
+    
+}
+  
+  
+.modal-password-title {
+  font-weight: bold;
+  font-size: 1.1em;
+  font-style: italic;
+  margin-bottom: 14px;
+  text-align: center;
+}
+// Old password
+.modal-password-form :nth-child(1){
+  margin-bottom: 4px;
+}
+// New password
+.modal-password-form :nth-child(2){
+  margin-bottom: 4px;
+}
+// New password verif
+.modal-password-form :nth-child(3){
+  margin-bottom: 4px;
+}
+// Valid button
+.modal-password-form :nth-child(4){
+  display: flex;
+  align-items: center;
+  font-size: 1.3em;
+  svg {
+    font-size: 1.6rem;
+    margin: none !important;
+  }
+}

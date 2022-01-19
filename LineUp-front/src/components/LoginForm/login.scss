@@ -1,0 +1,173 @@
+@use 'src/styles/vars';
+
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: space-around;
+    
+
+  .login__header {
+    
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    .login__headerAvatar {
+      width: 50px;
+      margin-right: 15px;
+    }
+
+    .login__headerTitle {
+      text-transform: uppercase;
+      font-size: 2.5em;
+      font-weight: bold;
+      letter-spacing: 0.1em;
+      text-shadow: vars.$titleShadow;
+    }
+  }
+
+  
+
+  .login__form {
+
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+
+    .input {
+      
+      border-radius: 5px;
+      width: 100%;
+      background: vars.$backgroundColor;
+      font-size: 1.2em;
+      margin-bottom: 25px;
+      color: vars.$fontColor;
+    }
+
+    input {
+      color: vars.$fontColor;
+    }
+    label {
+      color: vars.$fontColor;
+    }
+
+    .button {
+      margin-top: 50px;
+      text-align: center;
+      padding: 0.8rem;
+      height: 3em;
+      width: 100%;
+      border-radius: 0.20em;
+      color: vars.$fontColor;
+      font-size: large;
+      background-color: vars.$backgroundColor;
+      transition: all 0.2s ease-in-out;
+      text-decoration: none;
+      font-weight: 600;
+      border: none;
+
+      &:hover {
+        background-color: vars.$hoverButton;
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+
+
+  }
+
+  .login__toSignUp {
+    margin-top: -70px;
+    text-align: center;
+    color: black;
+    // font-size: 1.5em;
+    font-size: .8em;
+    font-weight: bold;
+
+    .link {
+      text-decoration: none;
+     
+      &:hover {
+        cursor: pointer;
+      }
+
+    }
+
+  }
+
+
+  .login__toResto {
+    text-align: center;
+    color: black;
+    // font-size: 1.3em;
+    font-size: .8em;
+    font-weight: bold;
+
+    .link {
+      text-decoration: none;
+     
+      &:hover {
+        cursor: pointer;
+      }
+
+    }
+
+  }
+  *, *:before, *:after {
+    box-sizing: border-box;
+  }
+
+  .link-border {
+    cursor: pointer;
+    padding: 20px;
+    position: relative;
+    color: black;
+    text-decoration: none;
+    line-height: 24px;
+    transition: 0.2s;
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      transition: transform .5s ease;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-style: solid;
+      border-color: vars.$linkBorderColor;
+    }
+    &:before {
+      border-width: 2px 0 2px 0;
+      transform:  scaleX(0);
+    }
+    &:after {
+      border-width: 0 2px 0 2px;
+      transform:  scaleY(0);
+    }
+    &:hover:before, &:hover:after {
+      transform:  scale(1, 1);
+      color: white;
+    }
+  }
+}
+@media only screen and (min-width : 480px) {
+  .login {
+    .login__form {
+      width: 50%;
+    }
+    .login__toSignUp {
+      font-size: 1.3em;
+    }
+    .login__toResto {
+      font-size: 1.2em;
+    }
+  }
+}

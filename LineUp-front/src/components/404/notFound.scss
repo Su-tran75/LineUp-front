@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+
+@media only screen and (min-width : 768px) {
+  .main-not-found {
+      transform: scale(1.5);
+      .lien_retour{
+        margin-bottom: -150px;
+        transform: scale(0.60);
+        text-align: center;
+      }
+  }
+  
+}
+
+.main-not-found {
+  
+  min-height: 600px;
+  margin: 0px auto;
+  width: auto;
+  max-width: 460px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .path {
+    stroke-dasharray: 300;
+    stroke-dashoffset: 300;
+    animation: dash 4s alternate infinite;
+  }
+  
+  @keyframes dash {
+    
+    0%,
+    30% {
+      fill: 4B4B62;
+      stroke-dashoffset: 0;
+    }
+    
+    80%,
+    100% {
+      fill: transparent;
+      stroke-dashoffset: -200;
+    }
+    
+    
+  }
+  .fundo {
+    animation: scales 3s alternate infinite;
+    transform-origin: center;
+  }
+  
+  .lien_retour{
+    position: absolute;
+    bottom: 150px;
+    font-size: 2em;
+    font-weight: bold;
+    background: linear-gradient(to bottom, var(#ff9800) 0%, var(#ff9800) 100%);
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+    background-size: 3px 3px;
+    color: #000;
+    text-decoration: none;
+    font-family: 'Gloria Hallelujah',
+    cursive;
+  }
+  
+  
+    
+  
+  
+  p:hover {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23ff9800' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+    background-position: 0 100%;
+    background-size: auto 6px;
+    background-repeat: repeat-x;
+    text-decoration: none;
+  }
+  
+  .pao-baixo {
+    animation: rotatepao 14s cubic-bezier(.1, .49, .41, .97) infinite;
+    transform-origin: center;
+  }
+  
+  .pao-cima {
+    animation: rotatepao 7s 1s cubic-bezier(.1, .49, .41, .97) infinite;
+    transform-origin: center;
+  }
+  
+  .olhos {
+    animation: olhos 2s alternate infinite;
+    transform-origin: center;
+  }
+  
+  .left-sparks {
+    animation: left-sparks 4s alternate infinite;
+    transform-origin: 150px 156px;
+  }
+  
+  .right-sparks {
+    animation: left-sparks 4s alternate infinite;
+    transform-origin: 310px 150px;
+  }
+  
+  .olhos {
+    animation: olhos 2s alternate infinite;
+    transform-origin: center;
+  }
+  
+  @keyframes scales {
+    from {
+      transform: scale(0.98)
+    }
+  
+    to {
+      transform: scale(1)
+    }
+  }
+  
+  @keyframes rotatepao {
+    0% {
+      transform: rotate(0deg)
+    }
+  
+    50%,
+    60% {
+      transform: rotate(-20deg)
+    }
+  
+    100% {
+      transform: rotate(0deg)
+    }
+  
+  }
+  
+  @keyframes olhos {
+    0% {
+      transform: rotateX(0deg);
+    }
+  
+    100% {
+      transform: rotateX(30deg);
+    }
+  }
+  
+  @keyframes left-sparks {
+    0% {
+      opacity: 0;
+    }
+  
+  }
+}
+

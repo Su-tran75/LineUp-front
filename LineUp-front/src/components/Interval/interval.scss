@@ -1,0 +1,99 @@
+@use 'src/styles/vars';
+
+.interval-component {
+  background-color: vars.$bor-background;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  // box-shadow: vars.$bor-shadow;
+  border-radius: 10px;
+  display: flex;
+
+  .interval__top_div {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.4em;
+  }
+  
+  .interval__bottom_div {
+    border-left: vars.$bor-borderWidth solid vars.$bor-borderColor;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .interval__title{
+    color: vars.$fontColor;
+    text-align: center;
+    font-size: 1.5em;
+    margin-top: 5px;
+  }
+  .interval__set__time{
+    font-size: 3em;
+    
+    color: vars.$fontColor;
+    input {
+      text-align: center;
+      color: vars.$fontColor;
+      font-size: 3.5rem;
+      width: 70px;
+      border: none;
+      background-color: transparent;
+      &:focus {
+        border: 1px solid vars.$bor-borderColor;
+        border-radius: 10px;
+      }
+    }
+    // Hide arrows
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    /* Firefox */
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
+  }
+  .interval__next {
+    font-size: 1.5em;
+    text-align: center;
+    color: vars.$fontColor;
+    .interval-hour-next {
+      margin-top: 0.3em;
+      font-size: 2rem;
+    }
+  }
+  .interval__btn.top {
+    border-bottom: vars.$bor-borderWidth solid vars.$bor-borderColor;
+    height: 100%;
+    width: 100%;
+  }
+  .interval__btn.middle {
+    border-bottom: vars.$bor-borderWidth solid vars.$bor-borderColor;
+    height: 70%;
+    width: 100%;
+  }
+  .interval__btn.bottom {
+    height: 100%;
+    width: 100%;
+  }
+  .interval__btn {
+    border: none;
+    background: vars.$bor-background;
+    color: vars.$fontColor;
+    &:active{
+      outline: none;
+      background: vars.$fontColor;
+      color: vars.$bor-background;
+      box-shadow: vars.$bor-btnShadowActivate;
+    }
+    svg {
+      font-size: 3em;
+    }
+  }
+}

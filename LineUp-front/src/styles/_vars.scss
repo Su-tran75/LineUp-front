@@ -1,0 +1,23 @@
+// Main Vars
+$backgroundColor: hsla(40, 11%, 11%, 0.878);
+$fontColor: wheat;
+$secondColor: orange;
+$hoverButton: #A68C69;
+$titleShadow: rgb(0, 0, 0) 2px 3px 5px;
+$linkBorderColor: #A30126;
+
+// Scrollbar
+$scrollbarColor: hsla(40, 11%, 11%, 0.878);
+$scrollbarWidth: 3px;
+$scrollbarBackground: transparent;
+
+// BackOffResto
+$bor-btnColor: #4bc4da;
+$bor-borderColor: #000000;
+$bor-fontColor: #ffffff;
+$bor-borderWidth: 2px;
+$bor-background: #1f1d19e0;
+$bor-shadow: 0px 0px 30px 6px rgb(0, 0, 0);
+$bor-text-shadow: rgb(173, 173, 173) 1px 2px 2px;
+$bor-btnShadowActivate: inset -30px -30px 40px darken($fontColor, 20%),
+                        inset 30px 30px 40px $fontColor;
